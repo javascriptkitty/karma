@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0029098764f128fdf5ebf8e2c2fc99c",
+    "revision": "037a90934154cad11479533d70f4b7cb",
     "url": "/karma/index.html"
   },
   {
-    "revision": "c64f4ff642f02daab93a",
+    "revision": "13482061740bf3455827",
     "url": "/karma/static/css/2.9ef65634.chunk.css"
   },
   {
-    "revision": "8c6c1c8bbedf3a29e155",
+    "revision": "18b52ed110148dfce081",
     "url": "/karma/static/css/main.edbb6bc7.chunk.css"
   },
   {
-    "revision": "c64f4ff642f02daab93a",
-    "url": "/karma/static/js/2.0552463c.chunk.js"
+    "revision": "13482061740bf3455827",
+    "url": "/karma/static/js/2.0851426a.chunk.js"
   },
   {
     "revision": "c099810c3c102db7a44755001529c804",
-    "url": "/karma/static/js/2.0552463c.chunk.js.LICENSE.txt"
+    "url": "/karma/static/js/2.0851426a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8c6c1c8bbedf3a29e155",
-    "url": "/karma/static/js/main.d760b743.chunk.js"
+    "revision": "18b52ed110148dfce081",
+    "url": "/karma/static/js/main.13830950.chunk.js"
   },
   {
     "revision": "e05e4acbfe95e2414127",
