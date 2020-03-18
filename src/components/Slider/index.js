@@ -12,28 +12,18 @@ function log(value) {
 export default class DynamicBounds extends React.Component {
   constructor(props) {
     super(props);
+
+    const min = -10;
+    const max = 10;
+
     this.state = {
-      min: -10,
-      max: 10,
+      min,
+      max,
       step: 1,
       values: [],
       intervalValue: 0,
-      sectionValue: 0.15,
-      marks: {}
+      sectionValue: 0.15
     };
-  }
-
-  componentDidMount() {
-    this.setState({
-      marks: {
-        [this.state.min]: {
-          label: <strong>{this.state.min}</strong>
-        },
-        [this.state.max]: {
-          label: <strong>{[this.state.max]}</strong>
-        }
-      }
-    });
   }
 
   onSliderChange = value => {
@@ -45,12 +35,7 @@ export default class DynamicBounds extends React.Component {
   };
   onMinChange = e => {
     this.setState({
-      min: +e.target.value || 0,
-      marks: {
-        [e.target.value]: {
-          label: <strong>{e.target.value}</strong>
-        }
-      }
+      min: parseInt(e.target.value)
     });
   };
   onIntervalValueChange = e => {
@@ -59,8 +44,9 @@ export default class DynamicBounds extends React.Component {
     });
   };
   onMaxChange = e => {
+    debugger;
     this.setState({
-      max: +e.target.value || 100
+      max: parseInt(e.target.value)
     });
   };
   onStepChange = e => {
@@ -89,6 +75,12 @@ export default class DynamicBounds extends React.Component {
     const labelStyle = { minWidth: "60px", display: "inline-block" };
     const inputStyle = { marginBottom: "10px" };
 
+    const { min, max } = this.state;
+    const marks = {
+      [min]: <strong>{min}</strong>,
+      [max]: <strong>{max}</strong>
+    };
+
     return (
       <div className="inputs">
         <h4> Section settings</h4>
@@ -108,13 +100,13 @@ export default class DynamicBounds extends React.Component {
           style={inputStyle}
         />
 
-        <label style={labelStyle}>Step: </label>
+        {/* <label style={labelStyle}>Step: </label>
         <input
           type="number"
           value={this.state.step}
           onChange={this.onStepChange}
           style={inputStyle}
-        />
+        /> */}
         <label style={labelStyle}>Section weight: </label>
         <input
           type="number"
@@ -151,7 +143,7 @@ export default class DynamicBounds extends React.Component {
           min={this.state.min}
           max={this.state.max}
           step={this.state.step}
-          marks={this.state.marks}
+          marks={marks}
           onChange={log}
           onChange={this.onSliderChange}
           onAfterChange={this.onAfterChange}
