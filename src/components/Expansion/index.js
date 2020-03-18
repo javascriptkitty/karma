@@ -71,8 +71,12 @@ export default class Expansion extends React.Component {
               Динамика по чистому обороту за 36 месяцев год к году = выр 2019 /
               ((выр 2017 + выр 2018)/2)
             </h4>
+            <p>
+              (искл. внутренние переводы, кредиты/займы, возвраты авансов и
+              ошибочных платежей)
+            </p>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          {/* <ExpansionPanelDetails>
             <form>
               <div className="expansion-interval">
                 <span>Interval</span>
@@ -128,7 +132,7 @@ export default class Expansion extends React.Component {
                 margin="normal"
               />
             </form>
-          </ExpansionPanelDetails>
+          </ExpansionPanelDetails>*/}
         </ExpansionPanel>
       </div>
     );

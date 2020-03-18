@@ -68,10 +68,6 @@ export default class App extends Component {
             onStepChange={this.onStepChange}
           />
           <CardContent>
-            <p>
-              (искл. внутренние переводы, кредиты/займы, возвраты авансов и
-              ошибочных платежей)
-            </p>
             <DynamicBounds />
             <br /> <br /> <br />
             {/* <DiscreteSlider

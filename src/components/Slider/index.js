@@ -4,7 +4,7 @@ import { Button } from "@material-ui/core";
 import Slider, { createSliderWithTooltip } from "rc-slider";
 import "./style.css";
 
-const SliderWithTooltip = createSliderWithTooltip(Slider);
+const Range = createSliderWithTooltip(Slider.Range);
 
 function log(value) {
   console.log(value); //eslint-disable-line
@@ -16,8 +16,9 @@ export default class DynamicBounds extends React.Component {
       min: -10,
       max: 10,
       step: 1,
-      value: [1, 2],
+      values: [],
       intervalValue: 0,
+      sectionValue: 0.15,
       marks: {}
     };
   }
@@ -67,16 +68,21 @@ export default class DynamicBounds extends React.Component {
       step: +e.target.value || 1
     });
   };
+  onSectionValueChange = event => {
+    this.setState({ sectionValue: event.target.value });
+  };
   updateMarks = () => {
     const min = document.getElementById("newIntMin").value;
     const max = document.getElementById("newIntMax").value;
     const value = document.getElementById("newIntValue").value;
     debugger;
+    const newValue = this.state.values.concat([min, max]);
     this.setState({
-      marks: {
-        [min]: min,
-        [max]: max
-      }
+      //   marks: {
+      //     [min]: min,
+      //     [max]: max
+      //   },
+      values: newValue
     });
   };
   render() {
@@ -101,11 +107,19 @@ export default class DynamicBounds extends React.Component {
           onChange={this.onMaxChange}
           style={inputStyle}
         />
+
         <label style={labelStyle}>Step: </label>
         <input
           type="number"
           value={this.state.step}
           onChange={this.onStepChange}
+          style={inputStyle}
+        />
+        <label style={labelStyle}>Section weight: </label>
+        <input
+          type="number"
+          value={this.state.sectionValue}
+          onChange={this.onSectionValueChange}
           style={inputStyle}
         />
         <br />
@@ -132,8 +146,8 @@ export default class DynamicBounds extends React.Component {
 
         <br />
         <br />
-        <SliderWithTooltip
-          //   value={this.state.value}
+        <Range
+          value={this.state.values}
           min={this.state.min}
           max={this.state.max}
           step={this.state.step}
