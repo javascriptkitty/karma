@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "037a90934154cad11479533d70f4b7cb",
+    "revision": "5aeed5db7acedf446782b9cc904a519d",
     "url": "/karma/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/karma/static/css/2.9ef65634.chunk.css"
   },
   {
-    "revision": "18b52ed110148dfce081",
+    "revision": "b0776507e214b0d4d725",
     "url": "/karma/static/css/main.edbb6bc7.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/karma/static/js/2.0851426a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "18b52ed110148dfce081",
-    "url": "/karma/static/js/main.13830950.chunk.js"
+    "revision": "b0776507e214b0d4d725",
+    "url": "/karma/static/js/main.b4e71b12.chunk.js"
   },
   {
     "revision": "e05e4acbfe95e2414127",
