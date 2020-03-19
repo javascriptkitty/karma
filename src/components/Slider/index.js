@@ -20,15 +20,16 @@ export default class DynamicBounds extends React.Component {
       min,
       max,
       step: 1,
+
       values: [],
       intervalValue: 0,
       sectionValue: 0.15
     };
   }
 
-  onSliderChange = value => {
-    log(value);
-    this.setState({ value });
+  onSliderChange = values => {
+    log(values);
+    this.setState({ values });
   };
   onAfterChange = value => {
     console.log(value); //eslint-disable-line
@@ -62,7 +63,7 @@ export default class DynamicBounds extends React.Component {
     const max = document.getElementById("newIntMax").value;
     const value = document.getElementById("newIntValue").value;
     debugger;
-    const newValue = this.state.values.concat([min, max]);
+    const newValue = this.state.values.concat([parseInt(min), parseInt(max)]);
     this.setState({
       //   marks: {
       //     [min]: min,
@@ -70,6 +71,9 @@ export default class DynamicBounds extends React.Component {
       //   },
       values: newValue
     });
+    document.getElementById("newIntMin").value = "";
+    document.getElementById("newIntMax").value = "";
+    document.getElementById("newIntValue").value = "";
   };
   render() {
     const labelStyle = { minWidth: "60px", display: "inline-block" };
