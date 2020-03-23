@@ -4,7 +4,7 @@
 .expansion-interval {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: flex-start;
   margin-right: 20px;
 }
 

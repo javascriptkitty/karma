@@ -1,9 +1,7 @@
 import React, { Component } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Card, Container, CardContent, Slider } from "@material-ui/core";
 
-import { Card, CardContent } from "@material-ui/core";
-//import clsx from "clsx";
-
-import DiscreteSlider from "./components/DiscreteSlider";
 import Expansion from "./components/Expansion";
 import DynamicBounds from "./components/Slider";
 import "./App.css";
@@ -55,6 +53,23 @@ const sections = [
     comment: ""
   }
 ];
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)"
+  },
+  title: {
+    fontSize: 14
+  },
+  pos: {
+    marginBottom: 12
+  }
+});
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -103,29 +118,34 @@ export default class App extends Component {
   };
 
   render() {
+    const classes = {};
     return (
-      <div className="App">
-        <Card>
-          <Expansion
-            params={this.state}
-            onSubmit={this.onSubmit}
-            onMinChange={this.onMinChange}
-            onMaxChange={this.onMaxChange}
-            onSectionValueChange={this.onSectionValueChange}
-            onStepChange={this.onStepChange}
-          />
-          <CardContent>
-            <DynamicBounds />
-            <br /> <br /> <br />
-            {/* <DiscreteSlider
-              marks={this.state.marks}
-              min={this.state.min}
-              max={this.state.max}
-              step={this.state.step}
-            /> */}
-          </CardContent>
-        </Card>
-      </div>
+      <Container className="App">
+        <br /> <br /> <br />
+        {sections.map((section, index) => {
+          return (
+            <Card className={classes.root} variant="outlined" key={index}>
+              <CardContent>
+                {" "}
+                <h4>{section.title}</h4>
+                <span>{section.comment}</span>
+                <br />
+                <div className="expansion-interval">
+                  <h4>Intervals</h4>
+                  <br />
+
+                  {/* <div className="titles">
+                    <span> </span>
+                    <span>point</span>
+                    <span>value</span>
+                  </div> */}
+                  <DynamicBounds />
+                </div>
+              </CardContent>
+            </Card>
+          );
+        })}
+      </Container>
     );
   }
 }

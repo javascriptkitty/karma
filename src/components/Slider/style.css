@@ -11,3 +11,16 @@
 .inputs label {
   min-width: unset !important;
 }
+.MuiExpansionPanelDetails-root {
+  flex-direction: column !important;
+}
+.MuiExpansionPanelDetails-root button {
+  align-self: flex-start;
+}
+form {
+  display: flex;
+  align-items: center;
+}
+.interval-line {
+  display: flex;
+}

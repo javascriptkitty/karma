@@ -1,3 +1,13 @@
 .App {
   /* text-align: center; */
 }
+.MuiCard-root {
+  margin: 15px 10px;
+}
+h4 {
+  margin-bottom: 5px;
+}
+.titles span {
+  display: inline-block;
+  width: 100px;
+}

@@ -67,14 +67,8 @@ export default class Expansion extends React.Component {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <h4>
-              Динамика по чистому обороту за 36 месяцев год к году = выр 2019 /
-              ((выр 2017 + выр 2018)/2)
-            </h4>
-            <p>
-              (искл. внутренние переводы, кредиты/займы, возвраты авансов и
-              ошибочных платежей)
-            </p>
+            <h4>{this.props.data.title}</h4>
+            <p>{this.props.data.comment}</p>
           </ExpansionPanelSummary>
           {/* <ExpansionPanelDetails>
             <form>
