@@ -23,4 +23,39 @@ form {
 }
 .interval-line {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.interval-add {
+  display: flex;
+  height: 45px;
+  align-items: flex-end;
+}
+.interval-add button {
+  margin-left: 20px;
+  height: 45px;
+}
+
+label + .MuiInput-formControl {
+  width: 80px;
+  margin-top: 0;
+}
+.MuiOutlinedInput-notchedOutline {
+  width: 50px;
+}
+.interval-add .MuiFormControl-marginNormal {
+  margin-bottom: 0 !important;
+}
+.interval-add .MuiSelect-outlined.MuiSelect-outlined {
+  padding-top: 10px !important;
+  display: flex;
+}
+.interval-titles {
+  display: flex;
+}
+.interval-titles span,
+.interval-line span {
+  display: inline-block;
+  width: 80px;
+  text-align: center;
 }

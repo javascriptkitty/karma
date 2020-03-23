@@ -1,8 +1,12 @@
 import "rc-slider/assets/index.css";
 import React, { Fragment } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import {
   Button,
   IconButton,
+  TextField,
+  Select,
+  FormControl,
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails
@@ -20,33 +24,6 @@ function log(value) {
   console.log(value); //eslint-disable-line
 }
 
-export function AddInterval(props) {
-  const labelStyle = { minWidth: "60px", display: "inline-block" };
-  const inputStyle = { marginBottom: "10px" };
-  const { index, points } = props;
-  debugger;
-  return (
-    <div className="interval-line">
-      {index == 0 ? <div>{`> ${points[index]}`}</div> : null}
-      {index == points.length - 1 ? <div>{`< ${points[index]}`}</div> : null}
-      {index !== 0 && index !== points.length - 1 ? (
-        <div>{`${points[index]} - ${points[index + 1]}`}</div>
-      ) : null}
-      <label style={labelStyle}>Value: </label>
-      <input
-        id="newIntValue"
-        type="number"
-        // onChange={props.onIntervalValueChange}
-      />
-      <Button variant="outlined" size="small">
-        <EditIcon />
-      </Button>
-      <Button variant="outlined" size="small">
-        <DeleteIcon />
-      </Button>
-    </div>
-  );
-}
 // export default class DynamicBounds extends React.Component {
 //   constructor(props) {
 //     super(props);
@@ -199,21 +176,29 @@ export default class DynamicBounds extends React.Component {
     super(props);
 
     this.state = {
-      intervals: []
+      intervals: [],
+      showAdd: true
     };
   }
 
   onDone = (index, interval) => {
     debugger;
     if (index == null) {
-      this.setState({ intervals: this.state.intervals.concat(interval) });
+      this.setState({
+        intervals: this.state.intervals.concat(interval),
+        showAdd: true
+      });
     } else {
       const intervals = this.state.intervals;
       intervals[index] = interval;
-      this.setState({ intervals });
+      this.setState({ intervals, showAdd: true });
     }
   };
-
+  changeShowAdd = () => {
+    this.setState({
+      showAdd: !this.state.showAdd
+    });
+  };
   render() {
     const views = this.state.intervals.map((interval, i) => (
       <EditInterval
@@ -227,8 +212,20 @@ export default class DynamicBounds extends React.Component {
 
     return (
       <div>
+        {this.state.intervals.length > 0 ? (
+          <div className="interval-titles">
+            <span>interval</span>
+            <span>value</span>
+          </div>
+        ) : null}
         {views}
-        <EditInterval mode="add" onDone={this.onDone} index={null} />
+        {this.state.showAdd ? (
+          <IconButton onClick={this.changeShowAdd}>
+            <AddCircleOutlineIcon />
+          </IconButton>
+        ) : (
+          <EditInterval mode="add" onDone={this.onDone} index={null} />
+        )}
       </div>
     );
   }
@@ -290,16 +287,23 @@ export class EditInterval extends React.Component {
     const { inclusive, threshold, value } = this.state;
 
     return (
-      <div>
-        When <span>{inclusive ? "<=" : "<"}</span> &nbsp;
-        <span>{threshold}</span> value is
+      <div className="interval-line">
+        <span>
+          {inclusive ? "≤" : "<"}&nbsp;
+          {threshold}
+        </span>
         <span> {value} </span>
-        <button onClick={this.onEditInterval}>edit</button>
-        <button>delete</button>
+        <IconButton onClick={this.onEditInterval}>
+          <EditIcon />
+        </IconButton>
+        <IconButton>
+          <DeleteIcon />
+        </IconButton>
       </div>
     );
   }
   renderEditAdd() {
+    const classes = {};
     const { inclusive, threshold, value, mode } = this.state;
     let label;
     if (mode === "add") {
@@ -311,15 +315,48 @@ export class EditInterval extends React.Component {
     }
 
     return (
-      <div>
-        <select onChange={this.onChangeInclusive} value={inclusive}>
-          <option value="true">&lt;=</option>
-          <option value="false">&lt;</option>
-        </select>
+      <div className="interval-add">
+        <FormControl variant="outlined">
+          <Select
+            native
+            onChange={this.onChangeInclusive}
+            value={inclusive}
+            inputProps={{
+              shrink: true
+            }}
+          >
+            <option value="true">&le;</option>
+            <option value="false">&lt;</option>
+          </Select>
+        </FormControl>
+        <TextField
+          id="point"
+          label="POINT"
+          type="number"
+          value={threshold}
+          onChange={this.onChangeThreshold}
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true
+          }}
+          margin="normal"
+        />
+        <TextField
+          id="value"
+          label="VALUE"
+          value={value}
+          // defaultValue="0"
+          onChange={this.onChangeValue}
+          className={classes.textField}
+          InputLabelProps={{
+            shrink: true
+          }}
+          margin="normal"
+        />
 
-        <input value={threshold} onChange={this.onChangeThreshold} />
-        <input value={value} onChange={this.onChangeValue} />
-        <button onClick={this.onAdd}>{label}</button>
+        <Button variant="outlined" onClick={this.onAdd}>
+          {label}
+        </Button>
       </div>
     );
   }
