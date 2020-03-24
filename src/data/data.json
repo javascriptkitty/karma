@@ -1,0 +1,356 @@
+{
+  "metrics": [
+    {
+      "title": "Динамика по чистому обороту за 36 месяцев год к году = выр 2019 / ((выр 2017 + выр 2018)/2)",
+      "index": 1,
+      "wight": 0.15,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "1"
+        },
+        {
+          "points": 3,
+          "low": "1",
+          "high": "1.1"
+        },
+        {
+          "points": 5,
+          "low": "1.1",
+          "high": "1.3"
+        },
+        {
+          "points": 7,
+          "low": "1.3",
+          "high": "1.6"
+        },
+        {
+          "points": 10,
+          "low": "1.6",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Сальдо погашенных к полученным кредитам/займам за 24 мес.",
+      "index": 2,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "1"
+        },
+        {
+          "points": 3,
+          "low": "1",
+          "high": "1.5"
+        },
+        {
+          "points": 5,
+          "low": "1.5",
+          "high": "2"
+        },
+        {
+          "points": 7,
+          "low": "2",
+          "high": "3"
+        },
+        {
+          "points": 10,
+          "low": "3",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Объем уплаченных налогов в % от выручки за 12 месяцев",
+      "index": 3,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "0.5"
+        },
+        {
+          "points": 3,
+          "low": "0.5",
+          "high": "2"
+        },
+        {
+          "points": 5,
+          "low": "2",
+          "high": "4"
+        },
+        {
+          "points": 7,
+          "low": "4",
+          "high": "6"
+        },
+        {
+          "points": 10,
+          "low": "6",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Среднедневной объем остатка по счету за 6 мес. в % от среднемесячной выручки за 6 мес.",
+      "index": 4,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "2"
+        },
+        {
+          "points": 3,
+          "low": "2",
+          "high": "5"
+        },
+        {
+          "points": 5,
+          "low": "5",
+          "high": "8"
+        },
+        {
+          "points": 7,
+          "low": "8",
+          "high": "12"
+        },
+        {
+          "points": 10,
+          "low": "12",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Дебиторы доля топ 3 за 12 мес.",
+      "index": 5,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 10,
+          "low": "-inf",
+          "high": "20"
+        },
+        {
+          "points": 7,
+          "low": "20",
+          "high": "40"
+        },
+        {
+          "points": 5,
+          "low": "40",
+          "high": "60"
+        },
+        {
+          "points": 3,
+          "low": "60",
+          "high": "80"
+        },
+        {
+          "points": 0,
+          "low": "80",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Дебиторы количество за 12 мес.",
+      "index": 6,
+      "wight": 0.05,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "0",
+          "high": "5"
+        },
+        {
+          "points": 3,
+          "low": "5",
+          "high": "10"
+        },
+        {
+          "points": 5,
+          "low": "10",
+          "high": "30"
+        },
+        {
+          "points": 7,
+          "low": "30",
+          "high": "60"
+        },
+        {
+          "points": 10,
+          "low": "60",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Кредиторы доля топ 3 за 12 мес.",
+      "index": 7,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 10,
+          "low": "-inf",
+          "high": "20"
+        },
+        {
+          "points": 7,
+          "low": "20",
+          "high": "40"
+        },
+        {
+          "points": 5,
+          "low": "40",
+          "high": "60"
+        },
+        {
+          "points": 3,
+          "low": "60",
+          "high": "80"
+        },
+        {
+          "points": 0,
+          "low": "80",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Кредиторы количество за 12 мес.",
+      "index": 8,
+      "wight": 0.05,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "0",
+          "high": "5"
+        },
+        {
+          "points": 3,
+          "low": "5",
+          "high": "10"
+        },
+        {
+          "points": 5,
+          "low": "10",
+          "high": "30"
+        },
+        {
+          "points": 7,
+          "low": "30",
+          "high": "60"
+        },
+        {
+          "points": 10,
+          "low": "60",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Уплата аренды за 12 мес.",
+      "index": 9,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "100000"
+        },
+        {
+          "points": 3,
+          "low": "100000",
+          "high": "250000"
+        },
+        {
+          "points": 5,
+          "low": "250000",
+          "high": "500000"
+        },
+        {
+          "points": 7,
+          "low": "500000",
+          "high": "1000000"
+        },
+        {
+          "points": 10,
+          "low": "1000000",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Среднедневное количество поступлений по кредитовому обороту счета за 6 мес.",
+      "index": 10,
+      "wight": 0.1,
+      "partitions": [
+        {
+          "points": 0,
+          "low": "-inf",
+          "high": "1"
+        },
+        {
+          "points": 3,
+          "low": "1",
+          "high": "5"
+        },
+        {
+          "points": 5,
+          "low": "5",
+          "high": "10"
+        },
+        {
+          "points": 7,
+          "low": "10",
+          "high": "20"
+        },
+        {
+          "points": 10,
+          "low": "20",
+          "high": "inf"
+        }
+      ]
+    },
+    {
+      "title": "Доля расчетов наличными (поступления/снятия) за 12 мес.",
+      "index": 11,
+      "wight": 0.05,
+      "partitions": [
+        {
+          "points": 10,
+          "low": "-inf",
+          "high": "5"
+        },
+        {
+          "points": 7,
+          "low": "5",
+          "high": "10"
+        },
+        {
+          "points": 5,
+          "low": "10",
+          "high": "20"
+        },
+        {
+          "points": 3,
+          "low": "20",
+          "high": "30"
+        },
+        {
+          "points": 0,
+          "low": "30",
+          "high": "inf"
+        }
+      ]
+    }
+  ]
+}

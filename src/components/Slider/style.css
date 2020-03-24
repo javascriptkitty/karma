@@ -43,6 +43,9 @@ label + .MuiInput-formControl {
 .MuiOutlinedInput-notchedOutline {
   width: 50px;
 }
+.interval-add {
+  margin-top: 20px;
+}
 .interval-add .MuiFormControl-marginNormal {
   margin-bottom: 0 !important;
 }
@@ -58,4 +61,13 @@ label + .MuiInput-formControl {
   display: inline-block;
   width: 80px;
   text-align: center;
+}
+.red {
+  background-color: tomato;
+}
+.black {
+  background-color: teal;
+}
+.MuiTableCell-root {
+  width: 80px;
 }

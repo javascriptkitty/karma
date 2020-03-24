@@ -1,5 +1,7 @@
-.MuiInput-root {
-  width: 100px;
+.MuiExpansionPanel-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .expansion-interval {
   display: flex;
@@ -8,10 +10,6 @@
   margin-right: 20px;
 }
 
-form {
-  display: flex;
-  align-items: flex-end;
-}
 .MuiFormControl-marginNormal {
   margin-left: 20px !important;
 }
@@ -23,4 +21,7 @@ form button {
 }
 .MuiExpansionPanelSummary-content h4 {
   margin-bottom: 5px;
+}
+.expansion {
+  width: 100%;
 }
